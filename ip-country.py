@@ -4,12 +4,14 @@ import requests
 import sys
 import subprocess
 import re
+import os
 from aggregate_prefixes import aggregate_prefixes
 
 headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
 url = 'https://ftp.ripe.net/ripe/asnames/asn.txt'
 networks = []
 pattern = re.compile(r'(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\/\d{1,2})')
+filepath = os.path.dirname(sys.argv[0])
 
 try:
   country_code = sys.argv[1].upper()
@@ -17,7 +19,7 @@ except:
   print('Usage: ', sys.argv[0], ' <two letters country code> ')
   exit()
 
-result = 'ip_'+country_code+'.lst'
+result = filepath + 'ip_' + country_code + '.lst'
 
 response = requests.get(url, headers=headers).text.split('\n')
 asn = [ t.split(' ')[0] for t in response if t.split(' ')[-1] == country_code]
