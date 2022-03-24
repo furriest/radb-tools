@@ -19,7 +19,7 @@ except:
   print('Usage: ', sys.argv[0], ' <two letters country code> ')
   exit()
 
-result = filepath + 'ip_' + country_code + '.lst'
+result = filepath + '/ip_' + country_code + '.lst'
 
 response = requests.get(url, headers=headers).text.split('\n')
 asn = [ t.split(' ')[0] for t in response if t.split(' ')[-1] == country_code]
