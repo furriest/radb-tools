@@ -2,7 +2,7 @@
 
 Tools for IP-ASN-Country mapping.
 
-- The ip-country script generates an ip-<country code>.lst file which contains all the IPv4 prefixes announced by the country's ASNs.
+- The ip-country script generates an ip-\<country code\>.lst file which contains all the IPv4 prefixes announced by the country's ASNs.
   
 ## Installation
 
