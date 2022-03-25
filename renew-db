@@ -1,5 +1,4 @@
 #!/bin/sh
 rm -f rib*.bz2
 pyasn_util_download.py --latest
-fname=$(find . -maxdepth 1 -name "rib*.bz2" -print0)
-pyasn_util_convert.py --single $fname ipasn.lst
+pyasn_util_convert.py --single $(find . -maxdepth 1 -name "rib*.bz2" -print0) ipasn.lst
