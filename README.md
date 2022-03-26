@@ -7,7 +7,7 @@ Tools for IP-ASN-Country mapping.
 ## Installation
 
 ```bash
-git clone --depth==1 git@github.com:furriest/radb-tools.git
+git clone --depth=1 git@github.com:furriest/radb-tools.git
 cd ./radb-tools
 pip install -r requirements.txt
 ```
