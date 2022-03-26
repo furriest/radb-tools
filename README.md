@@ -15,8 +15,8 @@ pip install -r requirements.txt
 ## Usage
 
 ```bash
-renew-db
-python3 ip-country.py RU
+./renew-db
+python3 ./ip-country.py RU
 ````
 
 ## License
