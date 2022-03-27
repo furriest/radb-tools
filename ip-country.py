@@ -3,7 +3,6 @@
 # version: 0.3
 import requests
 import sys
-import subprocess
 import os
 import pyasn
 from aggregate_prefixes import aggregate_prefixes
