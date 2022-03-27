@@ -131,3 +131,5 @@ dmypy.json
 *.lst
 *.bz2
 .DS_Store
+.vscode/
+
