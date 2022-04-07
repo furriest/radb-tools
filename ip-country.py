@@ -21,9 +21,8 @@ result = filepath + '/ip_' + country_code + '.lst'
 with open(result, 'w') as out_file, open(asnf, 'r') as asn_file:
     asn = [ t.split(' ')[0] for t in asn_file if t.split(' ')[-1][:2] == country_code]
     for i in asn:
-        output = asndb.get_as_prefixes(i)
         try:
-            networks.extend(list(output))
+            networks.extend(list(asndb.get_as_prefixes(i)))
         except:
             pass
     for line in list(aggregate_prefixes(networks)):
