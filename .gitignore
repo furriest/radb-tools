@@ -132,4 +132,4 @@ dmypy.json
 *.bz2
 .DS_Store
 .vscode/
-
+asn.txt

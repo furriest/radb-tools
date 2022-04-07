@@ -1,3 +1,2 @@
 aggregate_prefixes>=0.6.4
 pyasn>=1.6.1
-requests>=2.27.1
