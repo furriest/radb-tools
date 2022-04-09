@@ -35,4 +35,4 @@ with open(result, 'w') as out_file:
     for line in list(aggregate_prefixes(networks)):
         number_of_ips += line.num_addresses
         print(str(line), file=out_file)
-print('Total number of IPs is %i' % number_of_ips)
+print('Total number of IPs is %d' % number_of_ips)
