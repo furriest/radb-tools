@@ -17,6 +17,7 @@ filepath = os.path.dirname(sys.argv[0])
 asndb = pyasn.pyasn(filepath+'/ipasn.lst')
 asnfile = filepath + '/asn.txt'
 result = filepath + '/ip_' + country_code + '.lst'
+number_of_ips = 0
 
 with open(result, 'w') as out_file, open(asnfile, 'r') as asn_file:
     asn_list = [ t.split(' ')[0] for t in asn_file if t.split(' ')[-1][:2] == country_code]
@@ -26,4 +27,6 @@ with open(result, 'w') as out_file, open(asnfile, 'r') as asn_file:
         except:
             pass
     for line in list(aggregate_prefixes(networks)):
+        number_of_ips += line.num_addresses
         print(str(line), file=out_file)
+print('Total number of IPs is %i' % number_of_ips)

@@ -19,6 +19,7 @@ filepath = os.path.dirname(sys.argv[0])
 result = filepath + '/ip_' + country_code + '.lst'
 url = 'https://stat.ripe.net/data/country-resource-list/data.json?resource='+country_code
 ripe_ip = json.loads(requests.get(url).content)['data']['resources']['ipv4']
+number_of_ips = 0
 
 with open(result, 'w') as out_file:
     for record in ripe_ip:
@@ -32,4 +33,6 @@ with open(result, 'w') as out_file:
 #        except:
 #            pass
     for line in list(aggregate_prefixes(networks)):
+        number_of_ips += line.num_addresses
         print(str(line), file=out_file)
+print('Total number of IPs is %i' % number_of_ips)
