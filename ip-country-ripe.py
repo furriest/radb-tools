@@ -25,7 +25,7 @@ with open(result, 'w') as out_file:
 #        try:
             if record.find('-') > -1:
                 ips = record.split('-')
-                ipaddr = [ipa for ipa in summarize_address_range(IPv4Address(ips[0]),IPv4Address(ips[1]))]
+                ipaddr = list(summarize_address_range(IPv4Address(ips[0]),IPv4Address(ips[1])))
             else:
                 ipaddr = [IPv4Network(record)]
             networks.extend(ipaddr)
