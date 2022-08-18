@@ -20,6 +20,11 @@ pip3 install -r requirements.txt
 python3 ./ip-country.py RU
 python3 ./asn-country.py RU
 ````
+or
+
+```bash
+python3 ./ip-country-ripe.py RU
+````
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
