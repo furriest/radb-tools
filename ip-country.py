@@ -13,7 +13,7 @@ except:
   exit()
 
 networks = []
-filepath = os.path.dirname(sys.argv[0])
+filepath = os.path.dirname(os.path.abspath(sys.argv[0]))
 asndb = pyasn.pyasn(filepath+'/ipasn.lst')
 asnfile = filepath + '/asn.txt'
 result = filepath + '/ip_' + country_code + '.lst'

@@ -15,7 +15,7 @@ except:
   exit()
 
 networks = []
-filepath = os.path.dirname(sys.argv[0])
+filepath = os.path.dirname(os.path.abspath(sys.argv[0]))
 result = filepath + '/ip_' + country_code + '.lst'
 url = 'https://stat.ripe.net/data/country-resource-list/data.json?resource='+country_code
 ripe_ip = json.loads(requests.get(url).content)['data']['resources']['ipv4']
